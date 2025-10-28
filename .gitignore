@@ -1,0 +1,6 @@
+/package-lock.json
+/node_modules/*
+/.scannerwork/*
+
+#vscode settings
+.vscode/settings.json
