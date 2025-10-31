@@ -5,12 +5,11 @@
  * @format
  */
 import React from 'react';
-import { StatusBar, StyleSheet, Text, useColorScheme } from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
-  SafeAreaView,
 } from 'react-native-safe-area-context';
-import { XmppChat } from './src/XmppChat';
+import { Navigation } from './src/NavigationStack';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,10 +25,9 @@ function App() {
 function AppContent() {
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Xmpp Chat Component goes here</Text>
-      <XmppChat />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Navigation />
+    </View>
   );
 }
 
