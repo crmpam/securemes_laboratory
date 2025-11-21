@@ -1,0 +1,16 @@
+services:
+  ejabberd:
+    image: ghcr.io/processone/ejabberd:latest
+    container_name: ejabberd
+    restart: unless-stopped
+    ports:
+      - "5222:5222" 
+      - "5269:5269" 
+      - "5280:5280" 
+    environment:
+      - EJABBERD_ADMIN=dgetov@dgetov
+      - EJABBERD_PASSWORD=dgetov
+      - EJABBERD_DOMAIN=dgetov
+    volumes:
+      - ./ejabberd-data:/opt/ejabberd/database
+      - ./conf/ejabberd.yml:/opt/ejabberd/conf/ejabberd.yml:ro
